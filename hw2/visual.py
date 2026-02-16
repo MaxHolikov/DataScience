@@ -1,5 +1,4 @@
 import pandas as pd
-from pandas.io.formats.format import set_eng_float_format
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -18,4 +17,5 @@ class Visual:
         plt.figure(figsize=( figsize_x, figsize_y))
         sns.boxplot(data=self.data, x=a, y=b, orient=h)
         plt.xlim((ox, oy))
+
       return
