@@ -19,13 +19,12 @@ class DataProcessing:
       })
    
     def fill_missing(self, strategy='mean', columns=None) -> None:
-        """
+        '''
         Заполнение пропущенных значений.
-
         Параметры:
         - strategy: Стратегия заполнения ('mean', 'median', 'mode' или конкретное значение).
         - columns: Список столбцов для обработки (по умолчанию все числовые столбцы).
-        """
+        '''
         if columns is None:
             # Выбираем только числовые столбцы
             columns = self.data.select_dtypes(include='number').columns
@@ -41,4 +40,5 @@ class DataProcessing:
                 fill_value = strategy  # Конкретное значение
 
             self.data.fillna({col:fill_value}, inplace=True)
+
 
